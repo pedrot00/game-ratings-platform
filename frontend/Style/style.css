@@ -236,7 +236,9 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
 .carousel .carousel-arrow--next { right: 16px; }
 
 .about {
-  padding: 70px 0; border-block: 1px solid var(--color-border);
+  padding: 70px 0; border-block: 1px solid var(--color-border); 
+  background-image: linear-gradient(to right, #cc4d00 , rgb(163, 39, 23));
+  border: solid 2px black; 
 }
 .about .about-content {
   max-width: 640px; text-align: center; margin-inline: auto;
