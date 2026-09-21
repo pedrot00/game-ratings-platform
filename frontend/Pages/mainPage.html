@@ -1,0 +1,403 @@
+<!-- Pages/mainPage.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameAval.io — Discover, Review, Track Your Adventure</title>
+  <meta name="description" content="Your ultimate destination to discover, rate, track, and share your gaming experiences with a passionate community of gamers.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../Style/style.css">
+</head>
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-mark" viewBox="0 0 40 40">
+      <path d="M20 2 C11 2 4 10 4 20 C4 22 6 25 8 24 C10 23 9 19 12 15 C15 11 18 9 20 9 C22 9 25 11 28 15 C31 19 30 23 32 24 C34 25 36 22 36 20 C36 10 29 2 20 2 Z"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 1.2l2.72 5.68 6.15.53-4.66 4.1 1.4 6.02L10 14.6l-5.61 3.02 1.4-6.02-4.66-4.1 6.15-.53z"/>
+    </symbol>
+    <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+    <symbol id="icon-discord" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8.5 12.3c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zm7 0c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zM17.8 5.2A16.6 16.6 0 0 0 13.9 4l-.2.4a13 13 0 0 1 3.4 1.3 14.9 14.9 0 0 0-10.2 0 13 13 0 0 1 3.4-1.3L10.1 4a16.6 16.6 0 0 0-3.9 1.2C3.9 8.8 3.2 12.3 3.5 15.7a16.7 16.7 0 0 0 5 2.5l.7-1.2a10.8 10.8 0 0 1-1.6-.8l.4-.3a12 12 0 0 0 9.9 0l.4.3c-.5.3-1 .6-1.6.8l.7 1.2a16.6 16.6 0 0 0 5-2.5c.4-3.9-.6-7.4-3.6-10.5z"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.5 3h3l-7.3 8.3L21.5 21h-6.7l-5.2-6.8L3.6 21H.6l7.8-8.9L2.6 3h6.9l4.7 6.2zm-1.2 16.2h1.6L7.8 4.7H6.1z"/>
+    </symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.6 7.6a2.8 2.8 0 0 0-2-2C17.9 5.1 12 5.1 12 5.1s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.4 2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.4zM10 15.2V8.8l5.5 3.2z"/>
+    </symbol>
+    <symbol id="icon-reddit" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="13.5" r="8"/>
+      <circle cx="8.7" cy="13.8" r="1.2" fill="var(--color-bg)"/>
+      <circle cx="15.3" cy="13.8" r="1.2" fill="var(--color-bg)"/>
+      <path d="M8.5 17c1 .8 2.2 1.2 3.5 1.2s2.5-.4 3.5-1.2" stroke="var(--color-bg)" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <circle cx="17.5" cy="9" r="1.4"/>
+      <line x1="12" y1="8" x2="12.5" y2="4.5" stroke="currentColor" stroke-width="1"/>
+      <circle cx="12.7" cy="4" r="1"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="GameAval.io home">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#icon-mark"/></svg>
+        <span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#" class="is-active">Explore</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Games</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" action="#">
+        <svg class="search-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+        <label for="site-search" class="visually-hidden">Search games</label>
+        <input type="search" id="site-search" name="q" placeholder="Search games...">
+      </form>
+
+      <div class="auth-links">
+        <a href="#">Register</a>
+        <span class="divider" aria-hidden="true">|</span>
+        <a href="#">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-logo">
+          <svg class="hero-logo-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#icon-mark"/></svg>
+          <span class="hero-logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+        </div>
+
+        <h1 id="hero-title" class="hero-title">Discover, Review, Track Your Adventure.</h1>
+        <p class="hero-subtitle">Your universe of gaming.</p>
+
+        <ul class="hero-stats" aria-label="Platform Statistics">
+          <li><strong>350K</strong> Games Tracked</li>
+          <li><strong>4.1M</strong> Community Reviews</li>
+          <li><strong>900K</strong> Active Users</li>
+          <li><strong>850K</strong> Total Lists</li>
+        </ul>
+      </div>
+
+      <section class="carousel" aria-label="Featured Games Carousel">
+        <button type="button" class="carousel-arrow carousel-arrow--prev" aria-label="Scroll games left">
+          <svg aria-hidden="true"><use href="#icon-chevron-left"/></svg>
+        </button>
+
+        <ul class="carousel-track">
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--1">
+                <img src="../assets/images/hogwarts-legacy.jpg" alt="Hogwarts Legacy cover art" loading="lazy">
+                <span class="game-cover__fallback">Hogwarts<br>Legacy</span>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--2">
+                <img src="../assets/images/star-wars-jedi-survivor.jpg" alt="Star Wars Jedi: Survivor cover art" loading="lazy">
+                <span class="game-cover__fallback">Jedi<br>Survivor</span>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--3">
+                <img src="../assets/images/final-fantasy-xvi.jpg" alt="Final Fantasy XVI cover art" loading="lazy">
+                <span class="game-cover__fallback">Final Fantasy XVI</span>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card game-card--featured">
+            <article>
+              <figure class="game-cover cover--4">
+                <img src="../assets/images/red-dead-redemption-2.jpg" alt="Red Dead Redemption II cover art" loading="lazy">
+                <span class="game-cover__fallback">Red Dead<br>Redemption II</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Red Dead Redemption II</span>
+                <span class="rating" aria-label="Rated 4.9 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.9/5</span>
+                </span>
+                <a href="#" class="btn btn-visit" aria-label="Visit Red Dead Redemption II Game Page">
+                  <svg aria-hidden="true"><use href="#icon-external"/></svg>
+                  Visit Game Page
+                </a>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--5">
+                <img src="../assets/images/the-last-of-us-part-1.jpg" alt="The Last of Us Part I cover art" loading="lazy">
+                <span class="game-cover__fallback">The Last of Us<br>Part I</span>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--6">
+                <img src="../assets/images/outer-wilds.jpg" alt="Outer Wilds cover art" loading="lazy">
+                <span class="game-cover__fallback">Outer Wilds</span>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--7">
+                <img src="../assets/images/cyberpunk-2077.jpg" alt="Cyberpunk 2077 cover art" loading="lazy">
+                <span class="game-cover__fallback">Cyberpunk 2077</span>
+              </figure>
+            </article>
+          </li>
+        </ul>
+
+        <button type="button" class="carousel-arrow carousel-arrow--next" aria-label="Scroll games right">
+          <svg aria-hidden="true"><use href="#icon-chevron-right"/></svg>
+        </button>
+      </section>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <div class="container about-content">
+        <h2 id="about-title">What is GameAval.io?</h2>
+        <p>Your ultimate destination to discover, rate, track, and share your gaming experiences with a passionate community of gamers.</p>
+      </div>
+    </section>
+
+    <section class="browse" aria-labelledby="browse-title">
+      <div class="container">
+        <header class="browse-header">
+          <div class="browse-heading">
+            <h2 id="browse-title">Browse by Game</h2>
+            <p>Find your next favorite game. Explore, read reviews and see what the community thinks.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter games by genre">
+            <button type="button" class="filter is-active" aria-pressed="true">All</button>
+            <button type="button" class="filter" aria-pressed="false">Action</button>
+            <button type="button" class="filter" aria-pressed="false">RPG</button>
+            <button type="button" class="filter" aria-pressed="false">Adventure</button>
+            <button type="button" class="filter" aria-pressed="false">Shooter</button>
+            <button type="button" class="filter" aria-pressed="false">Strategy</button>
+            <button type="button" class="filter" aria-pressed="false">Indie</button>
+          </div>
+        </header>
+
+        <ul class="game-grid">
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--elden">
+                <img src="../assets/images/elden-ring.jpg" alt="Elden Ring cover art" loading="lazy">
+                <span class="game-cover__fallback">Elden Ring</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Elden Ring</span>
+                <span class="rating" aria-label="Rated 4.8 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.8/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--gow">
+                <img src="../assets/images/god-of-war-ragnarok.jpg" alt="God of War Ragnarök cover art" loading="lazy">
+                <span class="game-cover__fallback">God of War<br>Ragnarök</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">God of War Ragnarök</span>
+                <span class="rating" aria-label="Rated 4.7 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.7/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card game-card--spotlight">
+            <article>
+              <figure class="game-cover cover--witcher">
+                <img src="../assets/images/the-witcher-3-wild-hunt.jpg" alt="The Witcher 3: Wild Hunt cover art" loading="lazy">
+                <figcaption class="spotlight-panel">
+                  <h3>The Witcher 3: Wild Hunt</h3>
+                  <p>A vast open world, a gripping story and unforgettable characters.</p>
+                  <span class="rating" aria-label="Rated 4.9 out of 5">
+                    <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                    <span class="rating-value">4.9/5</span>
+                  </span>
+                  <a href="#" class="btn btn-visit" aria-label="Visit The Witcher 3 Game Page">
+                    <svg aria-hidden="true"><use href="#icon-external"/></svg>
+                    Visit Game Page
+                  </a>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--rdr2b">
+                <img src="../assets/images/red-dead-redemption-2.jpg" alt="Red Dead Redemption II cover art" loading="lazy">
+                <span class="game-cover__fallback">Red Dead<br>Redemption II</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Red Dead Redemption II</span>
+                <span class="rating" aria-label="Rated 4.9 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.9/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--horizon">
+                <img src="../assets/images/horizon-forbidden-west.jpg" alt="Horizon Forbidden West cover art" loading="lazy">
+                <span class="game-cover__fallback">Horizon<br>Forbidden West</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Horizon Forbidden West</span>
+                <span class="rating" aria-label="Rated 4.6 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.6/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--bg3">
+                <img src="../assets/images/baldurs-gate-3.jpg" alt="Baldur's Gate 3 cover art" loading="lazy">
+                <span class="game-cover__fallback">Baldur's Gate</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Baldur's Gate 3</span>
+                <span class="rating" aria-label="Rated 4.8 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.8/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--cyberpunkb">
+                <img src="../assets/images/cyberpunk-2077.jpg" alt="Cyberpunk 2077 cover art" loading="lazy">
+                <span class="game-cover__fallback">Cyberpunk</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Cyberpunk 2077</span>
+                <span class="rating" aria-label="Rated 4.4 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.4/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--zelda">
+                <img src="../assets/images/zelda-tears-of-the-kingdom.jpg" alt="The Legend of Zelda: Tears of the Kingdom cover art" loading="lazy">
+                <span class="game-cover__fallback">Zelda<br>Tears of the Kingdom</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Zelda: Tears of the Kingdom</span>
+                <span class="rating" aria-label="Rated 4.8 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.8/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+          <li class="game-card">
+            <article>
+              <figure class="game-cover cover--minecraft">
+                <img src="../assets/images/minecraft.jpg" alt="Minecraft cover art" loading="lazy">
+                <span class="game-cover__fallback">Minecraft</span>
+              </figure>
+              <div class="game-meta">
+                <span class="game-title">Minecraft</span>
+                <span class="rating" aria-label="Rated 4.8 out of 5">
+                  <svg class="icon-star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <span class="rating-value">4.8/5</span>
+                </span>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#" class="logo footer-logo" aria-label="GameAval.io home">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#icon-mark"/></svg>
+        <span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+      </a>
+
+      <nav class="footer-links" aria-label="Explore">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Lists</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-links" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-social" aria-label="Social Media">
+        <a href="#" aria-label="Discord"><svg aria-hidden="true"><use href="#icon-discord"/></svg></a>
+        <a href="#" aria-label="X (Twitter)"><svg aria-hidden="true"><use href="#icon-x"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"/></svg></a>
+        <a href="#" aria-label="Reddit"><svg aria-hidden="true"><use href="#icon-reddit"/></svg></a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 GameAval.io. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="mainPage.js" defer></script>
+</body>
+</html>
