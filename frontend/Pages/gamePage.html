@@ -1,0 +1,160 @@
+<!-- game-ratings-platform/frontend/Pages/gamePage.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loading Game Details... — GameAval.io</title>
+<meta content="Discover, rate, track, and share your gaming experiences with a passionate community of gamers." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../Style/style.css" rel="stylesheet"/>
+</head>
+<body>
+<svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="icon-mark" viewbox="0 0 40 40">
+<path d="M20 2 C11 2 4 10 4 20 C4 22 6 25 8 24 C10 23 9 19 12 15 C15 11 18 9 20 9 C22 9 25 11 28 15 C31 19 30 23 32 24 C34 25 36 22 36 20 C36 10 29 2 20 2 Z"></path>
+</symbol>
+<symbol fill="none" id="icon-search" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</symbol>
+<symbol fill="currentColor" id="icon-star" viewbox="0 0 20 20">
+<path d="M10 1.2l2.72 5.68 6.15.53-4.66 4.1 1.4 6.02L10 14.6l-5.61 3.02 1.4-6.02-4.66-4.1 6.15-.53z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-discord" viewbox="0 0 24 24">
+<path d="M8.5 12.3c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zm7 0c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zM17.8 5.2A16.6 16.6 0 0 0 13.9 4l-.2.4a13 13 0 0 1 3.4 1.3 14.9 14.9 0 0 0-10.2 0 13 13 0 0 1 3.4-1.3L10.1 4a16.6 16.6 0 0 0-3.9 1.2C3.9 8.8 3.2 12.3 3.5 15.7a16.7 16.7 0 0 0 5 2.5l.7-1.2a10.8 10.8 0 0 1-1.6-.8l.4-.3a12 12 0 0 0 9.9 0l.4.3c-.5.3-1 .6-1.6.8l.7 1.2a16.6 16.6 0 0 0 5-2.5c.4-3.9-.6-7.4-3.6-10.5z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-x" viewbox="0 0 24 24">
+<path d="M17.5 3h3l-7.3 8.3L21.5 21h-6.7l-5.2-6.8L3.6 21H.6l7.8-8.9L2.6 3h6.9l4.7 6.2zm-1.2 16.2h1.6L7.8 4.7H6.1z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-youtube" viewbox="0 0 24 24">
+<path d="M21.6 7.6a2.8 2.8 0 0 0-2-2C17.9 5.1 12 5.1 12 5.1s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.4 2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.4zM10 15.2V8.8l5.5 3.2z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-reddit" viewbox="0 0 24 24">
+<circle cx="12" cy="13.5" r="8"></circle>
+<circle cx="8.7" cy="13.8" fill="var(--color-bg)" r="1.2"></circle>
+<circle cx="15.3" cy="13.8" fill="var(--color-bg)" r="1.2"></circle>
+<path d="M8.5 17c1 .8 2.2 1.2 3.5 1.2s2.5-.4 3.5-1.2" fill="none" stroke="var(--color-bg)" stroke-linecap="round" stroke-width="1"></path>
+<circle cx="17.5" cy="9" r="1.4"></circle>
+<line stroke="currentColor" stroke-width="1" x1="12" x2="12.5" y1="8" y2="4.5"></line>
+<circle cx="12.7" cy="4" r="1"></circle>
+</symbol>
+</svg>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="GameAval.io home" class="logo" href="mainPage.html">
+<svg aria-hidden="true" class="logo-mark" viewbox="0 0 40 40"><use href="#icon-mark"></use></svg>
+<span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+</a>
+<nav aria-label="Primary navigation" class="main-nav">
+<ul>
+<li><a href="mainPage.html">Explore</a></li>
+<li><a href="#">Community</a></li>
+<li><a class="is-active" href="searchPage.html">Games</a></li>
+</ul>
+</nav>
+<form action="searchPage.html" class="search-form" method="get" role="search">
+<svg aria-hidden="true" class="search-icon"><use href="#icon-search"></use></svg>
+<label class="visually-hidden" for="site-search">Search games</label>
+<input id="site-search" name="q" placeholder="Search games..." type="search"/>
+</form>
+<div class="auth-links"><a class="header-profile-link" href="profilePage.html">Demo Profile</a><span aria-hidden="true" class="divider">|</span>
+<a href="authPage.html?mode=register">Register</a>
+<span aria-hidden="true" class="divider">|</span>
+<a href="authPage.html?mode=login">Log In</a>
+</div>
+</div>
+</header>
+<main class="game-details-page">
+<div class="game-hero" id="game-hero"></div>
+<div class="container game-content">
+<aside class="game-sidebar">
+<figure class="game-cover" id="game-cover-figure">
+<img alt="Game cover" id="game-cover-img"/>
+</figure>
+<div class="game-purchase" hidden="" id="game-purchase">
+<span class="price" id="game-price">Carregando...</span>
+<button class="btn-buy" disabled="" title="Store integration is not available yet" type="button">Buy Now</button>
+</div>
+</aside>
+<section class="game-info">
+<h1 id="game-title">Carregando Jogo...</h1>
+<div class="game-meta-large">
+<span class="rating">
+<svg class="icon-star"><use href="#icon-star"></use></svg>
+<span class="rating-value" id="game-rating">0.0/5</span>
+</span>
+<span class="developer" id="game-dev">-</span>
+<span class="release-date" id="game-date">-</span>
+</div>
+<div class="filters tags" id="game-tags">
+</div>
+<div class="description">
+<h2>About the Game</h2>
+<p id="game-desc">Aguarde enquanto as informações do jogo são carregadas.</p>
+</div>
+</section>
+</div>
+<section aria-labelledby="reviews-heading" class="container game-reviews-section" id="game-reviews">
+<div class="game-reviews-heading">
+<div>
+<p class="review-eyebrow">COMMUNITY VOICES</p>
+<h2 id="reviews-heading">Player Reviews</h2>
+<p aria-live="polite" class="game-reviews-count" id="reviews-count">Loading community reviews...</p>
+</div>
+<button class="review-button-primary" id="review-create" type="button">Write a review</button>
+</div>
+<p class="game-reviews-disclaimer">Reviews and users shown here are fictional. Writing a review uses a demo account; no real login is performed.</p>
+<p aria-live="polite" class="review-feedback" hidden="" id="review-feedback" role="status"></p>
+<ul aria-label="Reviews of this game" class="reviews-list" id="reviews-list"></ul>
+<div class="reviews-empty" hidden="" id="reviews-empty">
+<h3>No reviews yet</h3>
+<p>Be the first to share an opinion on this game.</p>
+</div>
+</section>
+<section aria-labelledby="game-not-found-title" class="container" hidden="" id="game-not-found">
+<h2 id="game-not-found-title">Game not found</h2>
+<p>This game is not in the current catalog. <a href="searchPage.html">Browse all games</a></p>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<a aria-label="GameAval.io home" class="logo footer-logo" href="mainPage.html">
+<svg aria-hidden="true" class="logo-mark" viewbox="0 0 40 40"><use href="#icon-mark"></use></svg>
+<span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+</a>
+<nav aria-label="Explore" class="footer-links">
+<h3>Explore</h3>
+<ul>
+<li><a href="searchPage.html">Games</a></li>
+<li><a href="#">Community</a></li>
+<li><a href="#">Reviews</a></li>
+<li><a href="#">Lists</a></li>
+</ul>
+</nav>
+<nav aria-label="Support" class="footer-links">
+<h3>Support</h3>
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+<nav aria-label="Social Media" class="footer-social">
+<a aria-label="Discord" href="#"><svg aria-hidden="true"><use href="#icon-discord"></use></svg></a>
+<a aria-label="X (Twitter)" href="#"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+<a aria-label="YouTube" href="#"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
+<a aria-label="Reddit" href="#"><svg aria-hidden="true"><use href="#icon-reddit"></use></svg></a>
+</nav>
+</div>
+<div class="container footer-bottom">
+<p>© 2026 GameAval.io. All rights reserved.</p>
+</div>
+</footer>
+<script src="../Scripts/gamePage.js" type="module"></script>
+</body>
+</html>

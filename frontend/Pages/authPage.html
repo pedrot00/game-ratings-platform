@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Sign in or create your GameAval.io account to track and review games." name="description"/>
+<title>Log In — GameAval.io</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../Style/style.css" rel="stylesheet"/>
+</head>
+<body>
+<svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="icon-mark" viewbox="0 0 40 40">
+<path d="M20 2 C11 2 4 10 4 20 C4 22 6 25 8 24 C10 23 9 19 12 15 C15 11 18 9 20 9 C22 9 25 11 28 15 C31 19 30 23 32 24 C34 25 36 22 36 20 C36 10 29 2 20 2 Z"></path>
+</symbol>
+<symbol fill="none" id="icon-search" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</symbol>
+<symbol fill="currentColor" id="icon-discord" viewbox="0 0 24 24">
+<path d="M8.5 12.3c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zm7 0c0 .9-.66 1.63-1.5 1.63s-1.5-.73-1.5-1.63.66-1.63 1.5-1.63 1.5.74 1.5 1.63zM17.8 5.2A16.6 16.6 0 0 0 13.9 4l-.2.4a13 13 0 0 1 3.4 1.3 14.9 14.9 0 0 0-10.2 0 13 13 0 0 1 3.4-1.3L10.1 4a16.6 16.6 0 0 0-3.9 1.2C3.9 8.8 3.2 12.3 3.5 15.7a16.7 16.7 0 0 0 5 2.5l.7 1.2a10.8 10.8 0 0 1-1.6-.8l.4-.3a12 12 0 0 0 9.9 0l.4.3c-.5.3-1 .6-1.6.8l.7 1.2a16.6 16.6 0 0 0 5-2.5c.4-3.9-.6-7.4-3.6-10.5z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-x" viewbox="0 0 24 24">
+<path d="M17.5 3h3l-7.3 8.3L21.5 21h-6.7l-5.2-6.8L3.6 21H.6l7.8-8.9L2.6 3h6.9l4.7 6.2zm-1.2 16.2h1.6L7.8 4.7H6.1z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-youtube" viewbox="0 0 24 24">
+<path d="M21.6 7.6a2.8 2.8 0 0 0-2-2C17.9 5.1 12 5.1 12 5.1s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.4 2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.4zM10 15.2V8.8l5.5 3.2z"></path>
+</symbol>
+<symbol fill="currentColor" id="icon-reddit" viewbox="0 0 24 24">
+<circle cx="12" cy="13.5" r="8"></circle><circle cx="8.7" cy="13.8" fill="var(--color-bg)" r="1.2"></circle><circle cx="15.3" cy="13.8" fill="var(--color-bg)" r="1.2"></circle>
+<path d="M8.5 17c1 .8 2.2 1.2 3.5 1.2s2.5-.4 3.5-1.2" fill="none" stroke="var(--color-bg)" stroke-linecap="round" stroke-width="1"></path><circle cx="17.5" cy="9" r="1.4"></circle><line stroke="currentColor" stroke-width="1" x1="12" x2="12.5" y1="8" y2="4.5"></line><circle cx="12.7" cy="4" r="1"></circle>
+</symbol>
+</svg>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="GameAval.io home" class="logo" href="mainPage.html">
+<svg aria-hidden="true" class="logo-mark"><use href="#icon-mark"></use></svg>
+<span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+</a>
+<nav aria-label="Primary navigation" class="main-nav">
+<ul>
+<li><a href="mainPage.html">Explore</a></li>
+<li><a aria-disabled="true" tabindex="-1">Community</a></li>
+<li><a href="searchPage.html">Games</a></li>
+</ul>
+</nav>
+<form action="searchPage.html" aria-label="Quick game search" class="search-form" method="get" role="search">
+<svg aria-hidden="true" class="search-icon"><use href="#icon-search"></use></svg>
+<label class="visually-hidden" for="site-search">Search games</label>
+<input id="site-search" name="q" placeholder="Search games..." type="search"/>
+</form>
+<div class="auth-links"><a class="header-profile-link" href="profilePage.html">Demo Profile</a><span aria-hidden="true" class="divider">|</span>
+<a data-auth-nav="register" href="authPage.html?mode=register">Register</a>
+<span aria-hidden="true" class="divider">|</span>
+<a data-auth-nav="login" href="authPage.html?mode=login">Log In</a>
+</div>
+</div>
+</header>
+<main class="auth-page">
+<div class="container auth-layout">
+<section aria-labelledby="auth-intro-title" class="auth-intro">
+<span class="auth-eyebrow">THE GAMING COMMUNITY</span>
+<h1 id="auth-intro-title">Every game has a story. <span>Share yours.</span></h1>
+<p>Keep track of what you play, discover new favorites, and see what other players think.</p>
+<ul class="auth-features">
+<li><span aria-hidden="true" class="auth-feature-mark">✓</span>Build your personal game collection</li>
+<li><span aria-hidden="true" class="auth-feature-mark">✓</span>Rate and review the games you've played</li>
+<li><span aria-hidden="true" class="auth-feature-mark">✓</span>Follow players with similar tastes</li>
+</ul>
+<p class="auth-disclaimer">Demo interface — authentication will be connected to the API later.</p>
+</section>
+<section aria-label="Account access" class="auth-panel">
+<nav aria-label="Account actions" class="auth-switch">
+<a aria-current="page" class="is-active" data-auth-mode="login" href="?mode=login" id="auth-login-link">Log In</a>
+<a data-auth-mode="register" href="?mode=register" id="auth-register-link">Create Account</a>
+</nav>
+<div class="auth-view" id="auth-login-view">
+<h2>Welcome back</h2>
+<p class="auth-view-subtitle">Sign in to continue your adventure.</p>
+<form id="login-form">
+<div class="auth-field">
+<label for="login-email">Email address</label>
+<input autocomplete="email" id="login-email" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<div class="auth-field">
+<label for="login-password">Password</label>
+<div class="auth-password-wrap">
+<input autocomplete="current-password" id="login-password" name="password" placeholder="Enter your password" required="" type="password"/>
+<button aria-label="Show password" aria-pressed="false" class="auth-reveal" data-password-toggle="login-password" type="button">Show</button>
+</div>
+</div>
+<button class="btn-buy auth-submit" type="submit">Log In</button>
+<p aria-live="polite" class="auth-feedback" id="login-feedback" role="status"></p>
+</form>
+<p class="auth-bottom-note">New to GameAval.io? <a data-auth-mode="register" href="?mode=register">Create an account</a></p>
+</div>
+<div class="auth-view" hidden="" id="auth-register-view">
+<h2>Create your account</h2>
+<p class="auth-view-subtitle">Start collecting the games that matter to you.</p>
+<form id="register-form">
+<div class="auth-field">
+<label for="register-display-name">Display name</label>
+<input autocomplete="nickname" id="register-display-name" maxlength="60" name="displayName" placeholder="How should we call you?" required="" type="text"/>
+</div>
+<div class="auth-field">
+<label for="register-username">Username</label>
+<input autocomplete="username" id="register-username" maxlength="20" minlength="3" name="username" pattern="[A-Za-z0-9_]{3,20}" placeholder="your_username" required="" title="3 to 20 letters, numbers or underscores" type="text"/>
+<small>3–20 characters; letters, numbers, or underscores.</small>
+</div>
+<div class="auth-field">
+<label for="register-email">Email address</label>
+<input autocomplete="email" id="register-email" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<div class="auth-field">
+<label for="register-password">Password</label>
+<div class="auth-password-wrap">
+<input autocomplete="new-password" id="register-password" minlength="8" name="password" placeholder="At least 8 characters" required="" type="password"/>
+<button aria-label="Show password" aria-pressed="false" class="auth-reveal" data-password-toggle="register-password" type="button">Show</button>
+</div>
+</div>
+<div class="auth-field">
+<label for="register-confirm-password">Confirm password</label>
+<div class="auth-password-wrap">
+<input autocomplete="new-password" id="register-confirm-password" minlength="8" name="confirmPassword" placeholder="Repeat your password" required="" type="password"/>
+<button aria-label="Show password" aria-pressed="false" class="auth-reveal" data-password-toggle="register-confirm-password" type="button">Show</button>
+</div>
+</div>
+<button class="btn-buy auth-submit" type="submit">Create Account</button>
+<p aria-live="polite" class="auth-feedback" id="register-feedback" role="status"></p>
+</form>
+<p class="auth-bottom-note">Already have an account? <a data-auth-mode="login" href="?mode=login">Log in</a></p>
+</div>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<a aria-label="GameAval.io home" class="logo footer-logo" href="mainPage.html">
+<svg aria-hidden="true" class="logo-mark"><use href="#icon-mark"></use></svg>
+<span class="logo-text">GAME<span class="logo-accent">AVAL.IO</span></span>
+</a>
+<nav aria-label="Explore" class="footer-links">
+<h3>Explore</h3>
+<ul>
+<li><a href="searchPage.html">Games</a></li>
+<li><a aria-disabled="true" tabindex="-1">Community</a></li>
+<li><a aria-disabled="true" tabindex="-1">Reviews</a></li>
+<li><a aria-disabled="true" tabindex="-1">Lists</a></li>
+</ul>
+</nav>
+<nav aria-label="Support" class="footer-links">
+<h3>Support</h3>
+<ul>
+<li><a aria-disabled="true" tabindex="-1">Help Center</a></li>
+<li><a aria-disabled="true" tabindex="-1">Terms of Service</a></li>
+<li><a aria-disabled="true" tabindex="-1">Privacy Policy</a></li>
+<li><a aria-disabled="true" tabindex="-1">Contact</a></li>
+</ul>
+</nav>
+<nav aria-label="Social Media" class="footer-social">
+<a aria-disabled="true" aria-label="Discord (coming soon)" tabindex="-1"><svg aria-hidden="true"><use href="#icon-discord"></use></svg></a>
+<a aria-disabled="true" aria-label="X (coming soon)" tabindex="-1"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+<a aria-disabled="true" aria-label="YouTube (coming soon)" tabindex="-1"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
+<a aria-disabled="true" aria-label="Reddit (coming soon)" tabindex="-1"><svg aria-hidden="true"><use href="#icon-reddit"></use></svg></a>
+</nav>
+</div>
+<div class="container footer-bottom"><p>© 2026 GameAval.io. All rights reserved.</p></div>
+</footer>
+<script defer="" src="../Scripts/authPage.js"></script>
+</body>
+</html>
