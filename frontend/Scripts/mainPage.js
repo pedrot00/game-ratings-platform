@@ -6,34 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const previous = carousel.querySelector(".carousel-arrow--prev");
     const next = carousel.querySelector(".carousel-arrow--next");
 
-    const updateButtons = () => {
-      const start = track.scrollLeft <= 1;
-      const end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    next.addEventListener("click", () => {
+      if (track.children.length > 0) {
+        const firstCard = track.firstElementChild;
+        track.appendChild(firstCard);
+      }
+    });
 
-      previous.disabled = start;
-      next.disabled = end;
-    };
-
-    const scrollCarousel = direction => {
-      const card = track.querySelector(".game-card");
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
-      const amount = card.offsetWidth + gap;
-
-      track.scrollBy({
-        left: direction * amount,
-        behavior: "smooth"
-      });
-    };
-
-    previous.addEventListener("click", () => scrollCarousel(-1));
-    next.addEventListener("click", () => scrollCarousel(1));
-
-    track.addEventListener("scroll", updateButtons, { passive: true });
-    window.addEventListener("resize", updateButtons);
-
-    updateButtons();
+    previous.addEventListener("click", () => {
+      if (track.children.length > 0) {
+        const lastCard = track.lastElementChild;
+        track.prepend(lastCard);
+      }
+    });
   }
 
+  // Filtros da seção Browse
   document.querySelectorAll(".filter").forEach(filter => {
     filter.addEventListener("click", () => {
       document.querySelector(".filter.is-active")?.classList.remove("is-active");
