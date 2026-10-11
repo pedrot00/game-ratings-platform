@@ -138,4 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   render();
+
+  // Registro de jogos: carregado sob demanda para nunca derrubar o perfil.
+  import("./profileLog.js")
+    .then(({ mountProfileLog }) => mountProfileLog({
+      user, isOwner,
+      onSaved: message => { feedback.textContent = message; feedback.hidden = false; }
+    }))
+    .catch(error => console.error("Game log failed to load:", error));
 });

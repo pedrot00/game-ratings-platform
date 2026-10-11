@@ -11,6 +11,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../Style/style.css" rel="stylesheet"/>
+<link href="../Style/gameLog.css" rel="stylesheet"/>
 </head>
 <body>
 <svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
@@ -79,6 +80,11 @@
 <span class="price" id="game-price">Carregando...</span>
 <button class="btn-buy" disabled="" title="Store integration is not available yet" type="button">Buy Now</button>
 </div>
+<section aria-labelledby="game-log-title" class="game-log">
+<h2 id="game-log-title">Your game log</h2>
+<div aria-label="Game status" class="game-log-options" id="game-log-options" role="group"></div>
+<p aria-live="polite" class="game-log-hint" id="game-log-hint" role="status">Track whether you played this game, are playing it or plan to.</p>
+</section>
 </aside>
 <section class="game-info">
 <h1 id="game-title">Carregando Jogo...</h1>

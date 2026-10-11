@@ -55,6 +55,19 @@ document.addEventListener("DOMContentLoaded", () => {
     purchase.hidden = false;
   }
 
+  // Registro de jogos: carregado sob demanda para nunca derrubar a pagina.
+  import("./gameLogControls.js")
+    .then(({ mountGameLog }) => mountGameLog({
+      gameId: game.id,
+      userId: DEMO_USER_ID,
+      container: document.getElementById("game-log-options"),
+      hint: document.getElementById("game-log-hint")
+    }))
+    .catch(error => {
+      document.getElementById("game-log-hint").textContent = "Game log is unavailable right now.";
+      console.error("Game log failed to load:", error);
+    });
+
   // O formulario de reviews e independente da origem: Perfil e Detalhes
   // vao reutilizar o mesmo modal e a mesma estrutura de dados.
   const list = document.getElementById("reviews-list");
