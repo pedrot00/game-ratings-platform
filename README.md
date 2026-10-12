@@ -4,6 +4,13 @@
 
 O GameAval.io é uma plataforma web voltada para o universo dos jogos eletrônicos, inspirada em redes sociais de avaliação como o Letterboxd. O objetivo é centralizar informações, avaliações e opiniões de jogadores sobre títulos de todas as plataformas, permitindo que os usuários descubram novos jogos, registrem suas experiências e compartilhem opiniões com uma comunidade apaixonada.
 
+## ⚠️ Importante — Execução do Projeto
+
+O frontend deve ser executado por um servidor HTTP local, como o **Live Server** (extensão do VS Code), devido ao uso de módulos JavaScript (`import` e `export`).
+
+**Para executar:** abra `frontend/Pages/mainPage.html` no VS Code, clique com o botão direito e selecione **Open with Live Server**.
+
+> ⚠️ Não abra os arquivos HTML diretamente (`file://`), pois isso pode impedir o carregamento dos módulos JavaScript.
 ---
 
 ## 🎯 Objetivo
