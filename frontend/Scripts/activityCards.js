@@ -2,6 +2,7 @@ import { getGameById } from "../Mocks/games.js";
 import { DEMO_USER_ID } from "../Mocks/users.js";
 import { getPublicUser } from "./userStore.js";
 import { createFollowButton } from "./followButton.js";
+import { createLikeButton } from "./likeButton.js";
 
 const make = (tag, className = "", content = "") => {
   const element = document.createElement(tag);
@@ -51,7 +52,7 @@ function createCover(game) {
   return link;
 }
 
-export function createActivityCard(activity, { compact = false } = {}) {
+export function createActivityCard(activity, { compact = false, viewerId = DEMO_USER_ID } = {}) {
   const user = getPublicUser(activity.userId);
   const game = getGameById(activity.gameId);
   const item = make("li", "activity-item");
@@ -84,7 +85,16 @@ export function createActivityCard(activity, { compact = false } = {}) {
   time.dateTime = activity.at;
   meta.append(time);
   if (activity.edited) meta.append(" · Edited");
-  main.append(meta);
+  if (activity.type === "review" && activity.reviewId) {
+    // Reviews podem ser curtidas direto do feed.
+    const footer = make("div", "activity-footer");
+    footer.append(meta, createLikeButton({
+      reviewId: activity.reviewId, authorId: activity.userId, authorName: user.displayName, viewerId
+    }));
+    main.append(footer);
+  } else {
+    main.append(meta);
+  }
 
   card.append(createCover(game), main);
   item.append(card);

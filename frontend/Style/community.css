@@ -1,0 +1,47 @@
+/* Aba Community — carregado depois de style.css e activity.css; usa os tokens e o layout da pagina Activity. */
+
+/* ---- Topo: titulo e totais ---- */
+.community-banner-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 28px 40px; flex-wrap: wrap; }
+.community-intro { min-width: 0; flex: 1 1 420px; }
+.community-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.4fr); flex: 0 1 520px; margin: 0;
+  background: rgba(18, 22, 31, .72); border: 1px solid var(--color-border); border-radius: var(--radius-m); overflow: hidden;
+}
+.community-stat { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 2px; padding: 15px 20px; min-width: 0; }
+.community-stat + .community-stat { border-left: 1px solid var(--color-border); }
+.community-stat dt { color: var(--color-text-muted); font-size: .76rem; white-space: nowrap; }
+.community-intro .activity-lead { text-wrap: balance; }
+.community-stat dd { margin: 0; font: 800 2rem/1.08 var(--font-display); white-space: nowrap; }
+
+/* ---- Secoes da coluna principal ---- */
+.community-main { min-width: 0; }
+.community-main .review-feedback { margin: 0 0 24px; }
+.community-section + .community-section { margin-top: 58px; }
+.community-section .profile-section-header { flex-wrap: wrap; }
+.community-section .reviews-list { margin: 0; }
+
+/* ---- Ranking das reviews mais curtidas ---- */
+.community-ribbon { display: flex; align-items: baseline; gap: 10px; }
+.community-rank { font: 800 1.6rem/1 var(--font-display); color: var(--color-accent-2); }
+.community-rank-note { color: var(--color-text-muted); font-size: .78rem; }
+.review-card--top { border-color: var(--color-accent); box-shadow: 0 0 0 1px rgba(239, 68, 56, .28); }
+
+/* ---- Painel lateral ---- */
+.community-list { list-style: none; margin: 0; padding: 0; }
+.community-panel-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; }
+.community-panel-head h2 { margin-bottom: 0; }
+.filters--small .filter { padding: 5px 12px; font-size: .74rem; }
+#community-reviewers-panel .activity-panel-note { padding: 0 0 4px; }
+#community-crowd-panel .activity-panel-note { padding-top: 10px; }
+
+@media (max-width: 760px) {
+  .community-stats { flex-basis: 100%; }
+  .community-stat { padding: 13px 14px; }
+  .community-stat dd { font-size: 1.7rem; }
+  .community-section .filters { width: 100%; }
+}
+@media (max-width: 520px) {
+  .community-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .community-stat:nth-child(3) { border-left: 0; }
+  .community-stat:nth-child(n + 3) { border-top: 1px solid var(--color-border); }
+}

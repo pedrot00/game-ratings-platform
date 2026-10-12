@@ -1,5 +1,7 @@
 import { getGameById } from "../Mocks/games.js";
+import { DEMO_USER_ID } from "../Mocks/users.js";
 import { getPublicUser } from "./userStore.js";
+import { createLikeButton } from "./likeButton.js";
 
 const create = (tag, className, value) => {
   const node = document.createElement(tag);
@@ -8,7 +10,9 @@ const create = (tag, className, value) => {
   return node;
 };
 
-export function createReviewCard(review, { currentUserId, onEdit } = {}) {
+// viewerId: quem esta olhando a pagina (curtidas). currentUserId: dono da pagina (editar).
+// onLikeChange(liked, persisted, count) deixa a pagina reagir a uma curtida.
+export function createReviewCard(review, { currentUserId, onEdit, viewerId = DEMO_USER_ID, onLikeChange } = {}) {
   const user = getPublicUser(review.userId);
   const game = getGameById(review.gameId);
   const item = create("li", "review-item");
@@ -42,16 +46,25 @@ export function createReviewCard(review, { currentUserId, onEdit } = {}) {
   const heading = create("h3", "review-title", review.title);
   const body = create("p", "review-body", review.body);
   article.append(header, gameLink, stars, heading, body);
+
+  // Rodape: curtir a esquerda; "Edited review" e "Edit review" a direita.
+  const footer = create("div", "review-card-footer");
+  footer.append(createLikeButton({
+    reviewId: review.id, authorId: review.userId, authorName: user?.displayName, viewerId, onChange: onLikeChange
+  }));
+  const actions = create("div", "review-card-actions");
   if (review.updatedAt !== review.createdAt) {
-    article.append(create("p", "review-edited", "Edited review"));
+    actions.append(create("span", "review-edited", "Edited review"));
   }
   if (typeof onEdit === "function" && review.userId === currentUserId) {
     const edit = create("button", "review-card-edit", "Edit review");
     edit.type = "button";
     edit.setAttribute("aria-label", `Edit your review of ${game?.title || "this game"}`);
     edit.addEventListener("click", () => onEdit(review));
-    article.append(edit);
+    actions.append(edit);
   }
+  if (actions.children.length) footer.append(actions);
+  article.append(footer);
   item.append(article);
   return item;
 }

@@ -929,3 +929,21 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
 .log-badge { align-self: start; padding: 3px 10px; font-size: .72rem; font-weight: 700; color: var(--color-accent-2); border: 1px solid var(--color-border); border-radius: var(--radius-pill); }
 .log-select { width: 100%; border: 1px solid #354052; color: var(--color-text); background: var(--color-surface-alt); border-radius: 7px; padding: 7px 8px; font: inherit; font-size: .78rem; min-width: 0; }
 @media (max-width: 760px) { .profile-log .filters { width: 100%; } }
+/* ---- Curtidas em reviews (usadas em Detalhes, Perfil, Feed e Community) ---- */
+.review-card-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 14px; padding-top: 6px; }
+.review-card-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+.review-card-actions .review-edited { margin-top: 0; }
+.review-card-actions .review-card-edit { padding: 0; align-self: auto; }
+.like-btn, .like-static { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 700; line-height: 1; }
+.like-btn {
+  position: relative; min-height: 36px; padding: 8px 14px 8px 11px; border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill); background: transparent; color: var(--color-text-muted);
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.like-btn:hover { color: var(--color-text); border-color: var(--color-accent); }
+.like-btn[aria-pressed="true"] { color: #ffb8ad; border-color: var(--color-accent); background: rgba(239, 68, 56, .12); }
+.like-icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: fill .2s ease; }
+.like-btn[aria-pressed="true"] .like-icon { fill: var(--color-accent); stroke: var(--color-accent); }
+.like-btn.is-popping .like-icon { animation: like-pop .32s ease-out; }
+@keyframes like-pop { 0% { transform: scale(1); } 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
+.like-static { color: var(--color-text-dim); }

@@ -20,7 +20,7 @@ export function getActivities({ userIds, type = "all" }) {
     for (const review of getReviews()) {
       if (!authors.has(review.userId)) continue;
       items.push({
-        id: `review:${review.id}`, type: "review", userId: review.userId, gameId: review.gameId,
+        id: `review:${review.id}`, type: "review", reviewId: review.id, userId: review.userId, gameId: review.gameId,
         at: review.createdAt, rating: review.rating, title: review.title, body: review.body,
         edited: review.updatedAt !== review.createdAt
       });
