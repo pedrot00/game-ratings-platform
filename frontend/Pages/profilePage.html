@@ -5,7 +5,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../Style/style.css" rel="stylesheet"/>
-<link href="../Style/gameLog.css" rel="stylesheet"/></head>
+<link href="../Style/gameLog.css" rel="stylesheet"/>
+<link href="../Style/activity.css" rel="stylesheet"/></head>
 <body>
 <svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
 <symbol id="icon-mark" viewbox="0 0 40 40">
@@ -47,6 +48,7 @@
 <ul>
 <li><a href="mainPage.html">Explore</a></li>
 <li><a href="#">Community</a></li>
+<li><a href="activityPage.html">Activity</a></li>
 <li><a class="is-active" href="searchPage.html">Games</a></li>
 </ul>
 </nav>
@@ -73,12 +75,14 @@
 <p class="profile-handle" id="profile-handle"></p>
 <p class="profile-bio" id="profile-bio"></p>
 <p class="profile-joined" id="profile-joined"></p>
+<p class="profile-follow-counts"><button class="profile-count-link" data-people-tab="following" type="button"><strong id="profile-following-count">0</strong> Following</button><button class="profile-count-link" data-people-tab="followers" type="button"><strong id="profile-followers-count">0</strong> Followers</button></p>
 </div>
 </div>
 <div class="profile-actions" hidden="" id="profile-owner-actions">
 <button class="review-button-primary" id="profile-new-review" type="button">+ New review</button>
 <a class="review-button-secondary" href="accountPage.html">Edit profile / Settings</a>
 </div>
+<div class="profile-follow-slot" hidden="" id="profile-follow-slot"></div>
 </div>
 </section>
 <div class="container profile-body">
@@ -105,6 +109,11 @@
 </div>
 <ul aria-label="Published reviews" class="reviews-list" id="profile-reviews-list"></ul>
 <div class="reviews-empty" hidden="" id="profile-review-empty"><h3>No reviews yet</h3><p>Reviews will appear here when the player writes one.</p></div>
+</section>
+<section aria-labelledby="profile-people-heading" class="profile-people" id="profile-people">
+<div class="profile-section-header"><div><p class="review-eyebrow">COMMUNITY</p><h2 id="profile-people-heading">Following &amp; followers</h2><p>The players this profile follows and the players who follow it.</p></div><div aria-label="Choose list" class="filters" id="profile-people-tabs" role="group"></div></div>
+<ul aria-label="Players" class="people-list" id="profile-people-list"></ul>
+<p class="profile-empty" hidden="" id="profile-people-empty"></p>
 </section>
 </div>
 </main>

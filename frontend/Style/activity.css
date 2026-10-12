@@ -1,0 +1,142 @@
+/* Seguir usuarios + Feed de atividades — carregado depois de style.css; usa os tokens dele. */
+
+/* ---- Botao Follow ---- */
+.follow-btn { min-width: 112px; }
+.follow-btn--small { min-width: 92px; padding: 7px 14px; font-size: .78rem; }
+.follow-btn .follow-label--hover { display: none; }
+.follow-btn.is-following:hover, .follow-btn.is-following:focus-visible { border-color: var(--color-accent); color: #ffb8ad; }
+.follow-btn.is-following:hover .follow-label--idle, .follow-btn.is-following:focus-visible .follow-label--idle { display: none; }
+.follow-btn.is-following:hover .follow-label--hover, .follow-btn.is-following:focus-visible .follow-label--hover { display: inline; }
+
+/* ---- Card de atividade ---- */
+.activity-list { display: grid; gap: 14px; }
+.activity-item { min-width: 0; }
+.activity-card {
+  display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 18px; height: 100%;
+  padding: 18px; background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-m); transition: border-color .2s ease;
+}
+.activity-card:hover { border-color: #3a4354; }
+.activity-cover, .popular-cover {
+  position: relative; display: grid; overflow: hidden; align-self: start; aspect-ratio: 3 / 4;
+  border-radius: 8px; background: #252e3e; border: 1px solid #3a4354;
+}
+.activity-cover img, .popular-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.activity-cover:hover img, .popular-cover:hover img { transform: scale(1.05); }
+.activity-cover-fallback {
+  display: none; place-items: center; text-align: center; padding: 8px;
+  font: 700 .95rem/1.1 var(--font-display);
+}
+.activity-cover.has-no-image img, .popular-cover.has-no-image img { display: none; }
+.activity-cover.has-no-image .activity-cover-fallback { display: grid; }
+.activity-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.activity-line { font-size: .88rem; color: var(--color-text-muted); overflow-wrap: anywhere; }
+.activity-user { color: var(--color-text); font-weight: 700; }
+.activity-game { color: var(--color-accent-2); font-weight: 700; }
+.activity-user:hover, .activity-game:hover { text-decoration: underline; }
+.activity-rating { color: var(--color-star); letter-spacing: 2px; font-size: 1.05rem; line-height: 1.2; }
+.activity-title { font: 700 1.35rem/1.1 var(--font-display); overflow-wrap: anywhere; }
+.activity-body {
+  color: var(--color-text-muted); font-size: .88rem; line-height: 1.65; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.activity-meta { color: var(--color-text-dim); font-size: .75rem; margin-top: auto; padding-top: 2px; }
+.activity-status {
+  align-self: flex-start; padding: 3px 10px; font-size: .72rem; font-weight: 700;
+  color: var(--color-accent-2); border: 1px solid var(--color-border); border-radius: var(--radius-pill);
+}
+.activity-card--compact { grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 14px; }
+.activity-card--compact .activity-title { font-size: 1.15rem; }
+.activity-card--compact .activity-body { -webkit-line-clamp: 2; line-clamp: 2; }
+
+/* ---- Previa na pagina inicial ---- */
+.activity-preview { padding: 70px 0 0; }
+.activity-preview-header {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 30px;
+}
+.activity-preview-header h2 { font: 700 clamp(1.5rem, 3vw, 2rem) var(--font-display); margin: 6px 0; }
+.activity-preview-header p:not(.review-eyebrow) { color: var(--color-text-dim); font-size: .9rem; }
+.activity-more-link { color: var(--color-accent-2); font-size: .9rem; font-weight: 700; white-space: nowrap; }
+.activity-more-link:hover { text-decoration: underline; }
+.activity-list--preview { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.activity-empty { padding: 36px 0; color: var(--color-text-muted); }
+.activity-empty h3 { color: var(--color-text); font: 700 1.5rem var(--font-display); margin-bottom: 5px; }
+.activity-empty a { color: var(--color-accent-2); font-weight: 700; }
+.activity-empty a:hover { text-decoration: underline; }
+.activity-empty[hidden], .activity-page [hidden] { display: none !important; }
+
+/* ---- Pagina de Atividades ---- */
+.activity-page { padding-bottom: 96px; }
+.activity-banner {
+  padding: 58px 0 43px; border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(ellipse at 83% 8%, rgba(239,68,56,.17), transparent 43%),
+    linear-gradient(145deg, #1a1e29 0%, #0d1119 70%, var(--color-bg) 100%);
+}
+.activity-banner h1 { font: 800 clamp(2.65rem, 5.4vw, 4.5rem)/.98 var(--font-display); letter-spacing: -.01em; margin: 7px 0; }
+.activity-lead { max-width: 600px; color: var(--color-text-muted); font-size: .93rem; margin-bottom: 18px; }
+.activity-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; padding-top: 40px; align-items: start;
+}
+.activity-feed .profile-section-header { flex-wrap: wrap; }
+.activity-feed .review-feedback { margin-top: 18px; }
+.activity-day-title {
+  display: flex; align-items: center; gap: 14px; margin: 28px 0 14px;
+  font: 700 1.05rem var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-muted);
+}
+.activity-day-title::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+.activity-load-more { display: flex; justify-content: center; margin-top: 28px; }
+.activity-aside { display: grid; gap: 20px; position: sticky; top: calc(var(--header-h) + 20px); }
+.activity-panel { padding: 22px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-m); }
+.activity-panel h2 { font: 800 1.5rem/1.1 var(--font-display); margin-bottom: 8px; }
+.activity-panel h2 .profile-heading-count { margin-left: 6px; }
+.activity-panel-note { color: var(--color-text-dim); font-size: .8rem; padding-top: 6px; }
+
+/* ---- Pessoas (listas de seguindo, seguidores e sugestoes) ---- */
+.person-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--color-border); }
+.person-row:first-child { border-top: 0; }
+.person-text { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.35; }
+.person-name { font-size: .9rem; font-weight: 700; overflow-wrap: anywhere; }
+.person-name:hover { text-decoration: underline; }
+.person-handle { color: var(--color-text-dim); font-size: .75rem; overflow-wrap: anywhere; }
+
+/* ---- Jogos em alta entre quem voce segue ---- */
+.popular-item { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--color-border); }
+.popular-item:first-child { border-top: 0; }
+.popular-cover { align-self: center; border-radius: 6px; }
+.popular-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.popular-title { font-size: .88rem; font-weight: 700; overflow-wrap: anywhere; }
+.popular-title:hover { color: var(--color-accent-2); }
+.popular-meta { color: var(--color-text-dim); font-size: .75rem; }
+
+/* ---- Seguir no perfil ---- */
+.profile-follow-counts { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; font-size: .85rem; }
+.profile-count-link { color: var(--color-text-muted); }
+.profile-count-link strong { color: var(--color-text); font-weight: 800; margin-right: 4px; }
+.profile-count-link:hover { color: var(--color-text); text-decoration: underline; }
+.profile-follow-slot { flex-shrink: 0; }
+.profile-people { margin-top: 58px; }
+.profile-people .profile-section-header { flex-wrap: wrap; }
+.people-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; padding-top: 12px; }
+.people-list .person-row:nth-child(2) { border-top: 0; }
+
+@media (max-width: 1060px) {
+  .activity-list--preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 992px) {
+  .activity-layout { grid-template-columns: 1fr; }
+  .activity-aside { position: static; }
+}
+@media (max-width: 760px) {
+  .activity-banner { padding: 38px 0 28px; }
+  .profile-follow-slot .follow-btn { width: 100%; }
+  .people-list { grid-template-columns: 1fr; }
+  .people-list .person-row:nth-child(2) { border-top: 1px solid var(--color-border); }
+  .activity-feed .filters, .profile-people .filters { width: 100%; }
+}
+@media (max-width: 640px) {
+  .activity-list--preview { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .activity-card { grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 14px; }
+  .activity-title { font-size: 1.2rem; }
+}

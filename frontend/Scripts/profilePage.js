@@ -146,4 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
       onSaved: message => { feedback.textContent = message; feedback.hidden = false; }
     }))
     .catch(error => console.error("Game log failed to load:", error));
+
+  // Seguir usuarios: tambem sob demanda, pelo mesmo motivo.
+  import("./profileFollow.js")
+    .then(({ mountProfileFollow }) => mountProfileFollow({
+      user, isOwner,
+      onSaved: message => { feedback.textContent = message; feedback.hidden = false; }
+    }))
+    .catch(error => console.error("Follow system failed to load:", error));
 });

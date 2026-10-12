@@ -11,6 +11,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../Style/style.css" rel="stylesheet"/>
+<link href="../Style/activity.css" rel="stylesheet"/>
 </head>
 <body>
 <svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +65,7 @@
 <ul>
 <li><a class="is-active" href="#">Explore</a></li>
 <li><a href="#">Community</a></li>
+<li><a href="activityPage.html">Activity</a></li>
 <li><a href="searchPage.html">Games</a></li>
 </ul>
 </nav>
@@ -113,6 +115,27 @@
 <div class="container about-content">
 <h2 id="about-title">What is GameAval.io?</h2>
 <p>Your ultimate destination to discover, rate, track, and share your gaming experiences with a passionate community of gamers.</p>
+</div>
+</section>
+<section aria-labelledby="activity-title" class="activity-preview" id="activity-preview">
+<div class="container">
+<header class="activity-preview-header">
+<div>
+<p class="review-eyebrow">FROM PLAYERS YOU FOLLOW</p>
+<h2 id="activity-title">Recent Activity</h2>
+<p>The latest reviews, ratings and game log updates from your circle.</p>
+</div>
+<a class="activity-more-link" href="activityPage.html">See more →</a>
+</header>
+<ul aria-label="Recent activity from players you follow" class="activity-list activity-list--preview" id="activity-preview-list">
+<!-- Cards are rendered from the follow and activity stores. -->
+</ul>
+<div class="activity-empty" hidden="" id="activity-preview-empty">
+<h3>No activity yet</h3>
+<p id="activity-preview-empty-text"></p>
+<p><a href="activityPage.html">Find players to follow →</a></p>
+</div>
+<noscript><p>Enable JavaScript to display recent activity.</p></noscript>
 </div>
 </section>
 <section aria-labelledby="browse-title" class="browse">
@@ -175,5 +198,6 @@
 </div>
 </footer>
 <script src="../Scripts/mainPage.js" type="module"></script>
+<script src="../Scripts/activityPreview.js" type="module"></script>
 </body>
 </html>
